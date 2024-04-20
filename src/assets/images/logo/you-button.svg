@@ -1,0 +1,25 @@
+<?xml version="1.0"?><svg width="433.3333333333333" height="433.3333333333333" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>me button</title>
+ <defs>
+  <linearGradient id="linearGradient1702">
+   <stop stop-color="#ffffff" stop-opacity="0.690722" offset="0" id="stop1703"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1" id="stop1704"/>
+  </linearGradient>
+  <linearGradient id="linearGradient1697">
+   <stop stop-color="#db210e" offset="0" id="stop1698"/>
+   <stop stop-color="#761107" offset="1" id="stop1699"/>
+  </linearGradient>
+  <radialGradient xlink:href="#linearGradient1702" r="15.301119" id="radialGradient1706" gradientUnits="userSpaceOnUse" fy="473.03323" fx="522.89911" cy="481.86633" cx="522.89532"/>
+  <linearGradient y2="-Infinity" y1="Infinity" xlink:href="#linearGradient1697" x2="0.434782" x1="0.434782" id="linearGradient1076"/>
+  <linearGradient y2="Infinity" y1="-Infinity" xlink:href="#linearGradient1697" x2="0.491802" x1="0.491802" id="linearGradient1077"/>
+  <linearGradient y2="1.321203" y1="-0.037714" xlink:href="#linearGradient1702" x2="0.482604" x1="0.478621" id="linearGradient1078"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <path fill="url(#linearGradient1076)" fill-rule="nonzero" stroke="url(#linearGradient1077)" stroke-width="1.364453" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" id="path1070" d="m393.368011,203.389999a190.404007,190.404007 0 1 1 -380.807311,0a190.404007,190.404007 0 1 1 380.807311,0z"/>
+   <path opacity="0.9" fill="url(#linearGradient1078)" fill-rule="evenodd" stroke-width="0.25000000pt" id="path1713" d="m341.278015,153.237c44.366974,-0.966995 -12.400024,-123.1532 -135.681015,-123.803099c-134.561302,-0.687101 -162.095798,110.961103 -140.719299,112.997099c0,0 36.864296,5.063004 71.939301,14.856003c56.472992,15.931 125.548996,-13.069 152.768997,-17.283005c30.342987,-4.697998 47.373016,15.391998 51.692017,13.233002z"/>
+  </g>
+  <text transform="matrix(4.84838 0 0 5.53904 -793.71 -758.832)" font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Verdana" font-size="24" id="svg_2" y="181.958605" x="204.872911" stroke-width="0" stroke="#000000" fill="#ffffff">YOU</text>
+ </g>
+</svg>
