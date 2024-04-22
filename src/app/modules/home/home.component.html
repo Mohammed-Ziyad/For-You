@@ -8,25 +8,26 @@
                 <!-- <div class="flex-auto p-6 sm:p-8 sm:pt-4 overflow-y-auto"> -->
                 <div class="flex flex-auto items-center min-w-0 overflow-y-hidden">
                     <ng-container *ngFor="let member of data.teamMembers">
-
-
                         <div class="flex-0 w-22 h-2w-22 rounded-full mx-4 row">
-                            <div class="overflow-hidden">
-                                <img class="w-full h-full object-cover overflow-hidden rounded-full"
-                                    [src]="member.avatar">
-
-                            </div>
-
-                            <div class="mt-6 font-medium text-center">{{member.name}}</div>
-
+                          <div class="overflow-hidden">
+                            <a href="javascript:void(0);" (click)="redirectToPage(member.name)">
+                              <img class="w-full h-full object-cover overflow-hidden rounded-full" [src]="member.avatar">
+                            </a>
+                          </div>
+                          <div class="mt-6 font-medium text-center">
+                            <a  (click)="redirectToPage(member.name)">{{member.name}}</a>
+                          </div>
                         </div>
+                      </ng-container>
 
-                    </ng-container>
+
                 </div>
             </div>
             <!-- home selector -->
         </div>
     </div>
+
+
     <!-- Main -->
 
     <div id="" class="w-full">
@@ -66,54 +67,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 <div  class="bg-white">
-    <!-- <header>
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <div class="hidden w-full text-gray-600 md:flex md:items-center">
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2721 10.2721C16.2721 12.4813 14.4813 14.2721 12.2721 14.2721C10.063 14.2721 8.27214 12.4813 8.27214 10.2721C8.27214 8.06298 10.063 6.27212 12.2721 6.27212C14.4813 6.27212 16.2721 8.06298 16.2721 10.2721ZM14.2721 10.2721C14.2721 11.3767 13.3767 12.2721 12.2721 12.2721C11.1676 12.2721 10.2721 11.3767 10.2721 10.2721C10.2721 9.16755 11.1676 8.27212 12.2721 8.27212C13.3767 8.27212 14.2721 9.16755 14.2721 10.2721Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M5.79417 16.5183C2.19424 13.0909 2.05438 7.39409 5.48178 3.79417C8.90918 0.194243 14.6059 0.054383 18.2059 3.48178C21.8058 6.90918 21.9457 12.6059 18.5183 16.2059L12.3124 22.7241L5.79417 16.5183ZM17.0698 14.8268L12.243 19.8965L7.17324 15.0698C4.3733 12.404 4.26452 7.97318 6.93028 5.17324C9.59603 2.3733 14.0268 2.26452 16.8268 4.93028C19.6267 7.59603 19.7355 12.0268 17.0698 14.8268Z" fill="currentColor" />
-                    </svg>
-                    <span class="mx-1 text-sm">NY</span>
-                </div>
-                <div class="w-full text-gray-700 md:text-center text-2xl font-semibold">
-                    Brand
-                </div>
-                <div class="flex items-center justify-end w-full">
-                    <button (click)="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none mx-4 sm:mx-0">
-                        <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </button>
 
-                    <div class="flex sm:hidden">
-                        <button (click)="isOpen = !isOpen" type="button" class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
-                            <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-                                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <nav ngClass="isOpen ? '' : 'hidden'" class="sm:flex sm:justify-center sm:items-center mt-4">
-                <div class="flex flex-col sm:flex-row">
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Home</a>
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Shop</a>
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Categories</a>
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Contact</a>
-                    <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">About</a>
-                </div>
-            </nav>
-            <div class="relative mt-6 max-w-lg mx-auto">
-            <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
-                <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
-
-                <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline" type="text" placeholder="Search">
-            </div>
-        </div>
-    </header> -->
     <!-- <div :class="cartOpen ? 'translate-x-0 ease-out' : 'translate-x-full ease-in'" class="fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
         <div class="flex items-center justify-between">
             <h3 class="text-2xl font-medium text-gray-700">Your cart</h3>
@@ -189,153 +143,9 @@
             <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </a>
     </div> -->
-    <!-- <main class="my-8">
-        <div class="container mx-auto px-6">
-            <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1577655197620-704858b270ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=144')">
-                <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                    <div class="px-10 max-w-xl">
-                        <h2 class="text-2xl text-white font-semibold">Sport Shoes</h2>
-                        <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                        <button class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                            <span>Shop Now</span>
-                            <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="md:flex mt-8 md:-mx-4">
-                <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                    <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                        <div class="px-10 max-w-xl">
-                            <h2 class="text-2xl text-white font-semibold">Back Pack</h2>
-                            <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
-                                <span>Shop Now</span>
-                                <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
-                    <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                        <div class="px-10 max-w-xl">
-                            <h2 class="text-2xl text-white font-semibold">Games</h2>
-                            <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
-                                <span>Shop Now</span>
-                                <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-16">
-                <h3 class="text-gray-600 text-2xl font-medium">Fashions</h3>
-                <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">Chanel</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">Man Mix</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">Classic watch</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=345&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">woman mix</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-16">
-                <h3 class="text-gray-600 text-2xl font-medium">Fashions</h3>
-                <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">Chanel</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">Man Mix</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">Classic watch</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                        <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=345&q=80')">
-                            <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                        <div class="px-5 py-3">
-                            <h3 class="text-gray-700 uppercase">woman mix</h3>
-                            <span class="text-gray-500 mt-2">$12</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main> -->
 
-    <footer class="bg-gray-200">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-500 hover:text-gray-400">Brand</a>
-            <p class="py-2 text-gray-500 sm:py-0">All rights reserved</p>
-        </div>
-    </footer>
+
+
     </div>
 
     <div class="container rtl mb-2 p-sm-2 ">
@@ -345,6 +155,966 @@
 
                     <img class="d-block" src="../../../../../assets/images/ui/angular-material/scenes/2024-03-15-65f3669cae3e7.png" alt="" srcset="">
                 </a>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-4 p-sm-2">
+        <div class="row" style="background: white;box-shadow: 0px 3px 6px #0000000d;border-radius: 5px;">
+            <div class="col-md-12">
+                <div class="feature-product-title">
+                    قد تعجبك
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="feature-product" style="margin-right:30px;">
+                    <div class="carousel-wrap p-1">
+                        <div class="owl-carousel owl-theme owl-loaded owl-drag"
+                            id="featured_deals_products_list">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage"
+                                    style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 4524px;">
+                                    <div class="owl-item active" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('4928')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('4928')">
+                                                                <img loading="lazy" id="wishlist-icon-4928"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-06-647f6fc26473e.webp">
+                                                        </a>
+                                                    </div>
+                                                    <a
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a
+                                                    class="img_link">
+                                                </a><a >
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+
+                                                    <div class="text-right  rtl">
+
+                                                        <a>
+                                                            مكنس صغير
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show  justify-between text-sm-right rtl">
+                                                        <span class="inline-block  font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            مكنس صغير لتظيف الاوساخ...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <div
+                                                                style="font-size: 12px!important;color: #E96A6A!important;">
+                                                                2,100.00ر.ي
+                                                            </div>
+                                                            <span class="text-accent rtl ">
+                                                                1,700.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item active" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('690')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('690')">
+                                                                <img loading="lazy" id="wishlist-icon-690"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/mkhd-uRHfQg"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2022-12-01-6388a085c8781.webp"
+
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/mkhd-uRHfQg"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/mkhd-uRHfQg"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/mkhd-uRHfQg">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/mkhd-uRHfQg">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/mkhd-uRHfQg">
+                                                        </a><a href="https://aosan.tech/product/mkhd-uRHfQg">
+                                                            مخدة
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            وسادة رقبة لون ازرق
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <div
+                                                                style="font-size: 12px!important;color: #E96A6A!important;">
+                                                                4,500.00ر.ي
+                                                            </div>
+                                                            <span class="text-accent rtl">
+                                                                3,500.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item active" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('4898')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('4898')">
+                                                                <img loading="lazy" id="wishlist-icon-4898"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/mmsh-ard-j3rLcj"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-05-647e32f411151.webp"
+                                                                data-imgs="[&quot;2023-06-05-647e32f411151.webp&quot;,&quot;2023-06-05-647e32f413176.webp&quot;,&quot;2023-06-05-647e32f4136b9.webp&quot;,&quot;2023-06-05-647e32f413c4f.webp&quot;,&quot;2023-06-05-647e32f414250.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/mmsh-ard-j3rLcj"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/mmsh-ard-j3rLcj"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/mmsh-ard-j3rLcj">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/mmsh-ard-j3rLcj">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/mmsh-ard-j3rLcj">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/mmsh-ard-j3rLcj">
+                                                            ممسحة ارض
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            ممسحة ارض لتنشيف الماء
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <div
+                                                                style="font-size: 12px!important;color: #E96A6A!important;">
+                                                                1,700.00ر.ي
+                                                            </div>
+                                                            <span class="text-accent rtl">
+                                                                1,400.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('669')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('669')">
+                                                                <img loading="lazy" id="wishlist-icon-669"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/mnshf-CBd2fU"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-08-17-64de33a020a6d.webp"
+                                                                data-imgs="[&quot;2023-08-17-64de33a020a6d.webp&quot;,&quot;2023-08-17-64de33a023034.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/mnshf-CBd2fU"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/mnshf-CBd2fU"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/mnshf-CBd2fU">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/mnshf-CBd2fU">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/mnshf-CBd2fU">
+                                                        </a><a href="https://aosan.tech/product/mnshf-CBd2fU">
+                                                            منشفة
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            منشفة للجسم ٧٠×١٤٠ لون...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <div
+                                                                style="font-size: 12px!important;color: #E96A6A!important;">
+                                                                4,900.00ر.ي
+                                                            </div>
+                                                            <span class="text-accent rtl">
+                                                                4,500.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('1357')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('1357')">
+                                                                <img loading="lazy" id="wishlist-icon-1357"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-24-6497521a12daf.webp"
+                                                                data-imgs="[&quot;2023-06-24-6497521a12daf.webp&quot;,&quot;2023-06-24-6497521a15582.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a
+                                                        href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a
+                                                    href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS"
+                                                    class="img_link">
+                                                </a><a
+                                                    href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a
+                                                        href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh60-3tHwKS">
+                                                            سجاد صلاه فنتازي اسود ك...
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            سجاد صلاة فنتازي اسود ك...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <span class="text-accent rtl">
+                                                                5,900.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('1385')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('1385')">
+                                                                <img loading="lazy" id="wishlist-icon-1385"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-24-64975341d5576.webp"
+                                                                data-imgs="[&quot;2023-06-24-64975341d5576.webp&quot;,&quot;2023-06-24-64975341d7c80.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a
+                                                        href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a
+                                                    href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK"
+                                                    class="img_link">
+                                                </a><a
+                                                    href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a
+                                                        href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/sgad-slah-fntazy-asod-kaabh-sh31-VgMdeK">
+                                                            سجاد صلاه فنتازي اسود ك...
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            سجاد صلاه فنتازي اسود ك...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <span class="text-accent rtl">
+                                                                5,900.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('1620')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('1620')">
+                                                                <img loading="lazy" id="wishlist-icon-1620"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/sgad-sla-WT24td"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-25-649852b8f0cde.webp"
+                                                                data-imgs="[&quot;2023-06-25-649852b8f0cde.webp&quot;,&quot;2023-06-25-649852b8f3755.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/sgad-sla-WT24td"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/sgad-sla-WT24td"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/sgad-sla-WT24td">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/sgad-sla-WT24td">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/sgad-sla-WT24td">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/sgad-sla-WT24td">
+                                                            سجادة صلاة
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            سجاد صلاة مشجر عادي
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <span class="text-accent rtl">
+                                                                2,500.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('1628')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('1628')">
+                                                                <img loading="lazy" id="wishlist-icon-1628"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/sgad-sla-eYm603"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-25-649857a84d1b4.webp"
+                                                                data-imgs="[&quot;2023-06-25-649857a84d1b4.webp&quot;,&quot;2023-06-25-649857a84fb63.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/sgad-sla-eYm603"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/sgad-sla-eYm603"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/sgad-sla-eYm603">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/sgad-sla-eYm603">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/sgad-sla-eYm603">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/sgad-sla-eYm603">
+                                                            سجاد صلاة
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            سجاد صلاة فنتازي
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <span class="text-accent rtl">
+                                                                4,900.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('4683')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('4683')">
+                                                                <img loading="lazy" id="wishlist-icon-4683"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-05-19-6467bbdb032e8.webp"
+                                                                data-imgs="[&quot;2023-05-19-6467bbdb032e8.webp&quot;,&quot;2023-05-19-6467bbdb03d67.webp&quot;,&quot;2023-05-19-6467bbdb0429e.webp&quot;,&quot;2023-05-19-6467bbdb047dc.webp&quot;,&quot;2023-05-19-6467bbdb04d11.webp&quot;,&quot;2023-05-19-6467bbdb05339.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a
+                                                        href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a
+                                                    href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO"
+                                                    class="img_link">
+                                                </a><a
+                                                    href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a
+                                                        href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/stayr-rol-120-180-dvMYQO">
+                                                            ستائر رول 100* 180
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            ستائر منزل سهلة التركيب...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <div
+                                                                style="font-size: 12px!important;color: #E96A6A!important;">
+                                                                8,900.00ر.ي
+                                                            </div>
+                                                            <span class="text-accent rtl">
+                                                                5,500.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('4890')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('4890')">
+                                                                <img loading="lazy" id="wishlist-icon-4890"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/lyao-magyk-iz6Pq1"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-06-05-647e152b473bc.webp"
+                                                                data-imgs="[&quot;2023-06-05-647e152b473bc.webp&quot;,&quot;2023-06-05-647e152b49482.webp&quot;,&quot;2023-06-05-647e152b49bb7.webp&quot;,&quot;2023-06-05-647e152b4a181.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/lyao-magyk-iz6Pq1"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/lyao-magyk-iz6Pq1"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/lyao-magyk-iz6Pq1">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/lyao-magyk-iz6Pq1">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/lyao-magyk-iz6Pq1">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/lyao-magyk-iz6Pq1">
+                                                            لياو ماجيك
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            لياو ماجيك الطابق تنظيف...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <span class="text-accent rtl">
+                                                                17,500.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('5233')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('5233')">
+                                                                <img loading="lazy" id="wishlist-icon-5233"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/lhaf-nom-dVc087"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-12-30-659057616773c.webp"
+                                                                data-imgs="[&quot;2023-12-30-659057616773c.webp&quot;,&quot;2023-08-17-64de51b7114c9.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a href="https://aosan.tech/product/lhaf-nom-dVc087"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/lhaf-nom-dVc087"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/lhaf-nom-dVc087">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/lhaf-nom-dVc087">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/lhaf-nom-dVc087">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/lhaf-nom-dVc087">
+                                                            لحاف نوم
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            لحاف فرو مخمل 12 قطعه
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <div
+                                                                style="font-size: 12px!important;color: #E96A6A!important;">
+                                                                56,200.00ر.ي
+                                                            </div>
+                                                            <span class="text-accent rtl">
+                                                                49,500.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 372px; margin-right: 5px;">
+                                        <div style="margin:0 0 40px 0;">
+                                            <div class="feature-product-single ">
+                                                <div class="product-img" >
+                                                    <div class="img-container" style="height: 75% !important">
+                                                        <div class="sizes-sec">
+                                                            <div class="addToCart">
+                                                                <a class="btn btn-primary btn-sm"
+                                                                    style="margin-top: 8%;border: none;background: #fff0 !important;color: #000 !important;font-size: 22px;"
+                                                                    href="javascript:"
+                                                                    onclick="add_to_cart('5940')">
+                                                                    <i class="czi-cart align-middle ml-1"></i>
+                                                                    إضافه للسله
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div id="feature_product_wishlist">
+                                                            <a href="javascript:" onclick="addWishlist('5940')">
+                                                                <img loading="lazy" id="wishlist-icon-5940"
+                                                                     class="feature_wishlist_img"
+                                                                    src="https://aosan.tech/public/assets/front-end/img/autline-wishlist.png"
+                                                                    alt="autline-wishlist">
+                                                            </a>
+                                                        </div>
+
+
+                                                        <a href="https://aosan.tech/product/hafth-taaam-JzqsG2"
+                                                            class="img_link">
+                                                            <img class="featured_deals_img" loading="lazy"
+                                                                src="https://aosan.tech/storage/app/public/product/2023-10-11-6526a572716b8.webp"
+                                                                data-imgs="[&quot;2023-10-11-6526a572716b8.webp&quot;,&quot;2023-10-11-6526a5728938a.webp&quot;,&quot;2023-10-11-6526a572895fd.webp&quot;,&quot;2023-10-11-6526a5728c27f.webp&quot;]"
+                                                                >
+                                                        </a>
+                                                    </div><a
+                                                        href="https://aosan.tech/product/hafth-taaam-JzqsG2"
+                                                        class="img_link">
+
+                                                    </a>
+                                                </div><a href="https://aosan.tech/product/hafth-taaam-JzqsG2"
+                                                    class="img_link">
+                                                </a><a href="https://aosan.tech/product/hafth-taaam-JzqsG2">
+                                                </a>
+                                                <div class="single-product-details"
+                                                    style="position:relative;padding-top:10px; border-radius: 0px 0px 5px 5px;">
+                                                    <a href="https://aosan.tech/product/hafth-taaam-JzqsG2">
+                                                    </a>
+                                                    <div class="text-right  rtl"><a
+                                                            href="https://aosan.tech/product/hafth-taaam-JzqsG2">
+                                                        </a><a
+                                                            href="https://aosan.tech/product/hafth-taaam-JzqsG2">
+                                                            حافظة طعام
+                                                        </a>
+                                                    </div>
+                                                    <div
+                                                        class="rating-show justify-between text-sm-right rtl">
+                                                        <span class="inline-block font-size-sm text-body"
+                                                            style="height: 10px;">
+                                                            حافظة طعام مقسمة مع شنط...
+                                                        </span>
+                                                    </div>
+                                                    <div class="justify-between text-sm-right rtl">
+                                                        <div class="product-price text-sm-right"
+                                                            style="display: flex; flex-direction: row">
+                                                            <span class="text-accent rtl">
+                                                                4,900.00ر.ي
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-nav"><button type="button" role="presentation"
+                                    class="owl-prev disabled"><i class="czi-arrow-left"></i></button><button
+                                    type="button" role="presentation" class="owl-next"><i
+                                        class="czi-arrow-right" style="display:none;"></i></button></div>
+                            <div class="owl-dots disabled"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

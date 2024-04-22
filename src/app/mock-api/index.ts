@@ -18,7 +18,7 @@ import { UserMockApi } from 'app/mock-api/common/user/api';
 import { AnalyticsMockApi } from 'app/mock-api/dashboards/analytics/api';
 import { CryptoMockApi } from 'app/mock-api/dashboards/crypto/api';
 import { FinanceMockApi } from 'app/mock-api/dashboards/finance/api';
-import { HomeMockApi } from 'app/mock-api/dashboards/home/api';
+import { HomeMockApi } from 'app/mock-api/home/api';
 import { ActivitiesMockApi } from 'app/mock-api/pages/activities/api';
 import { IconsMockApi } from 'app/mock-api/ui/icons/api';
 

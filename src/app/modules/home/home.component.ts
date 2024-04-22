@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 import { TranslocoModule } from '@ngneat/transloco';
 import { HomeService } from 'app/modules/home/home.service';
 import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
@@ -16,6 +16,7 @@ import { Subject, takeUntil } from 'rxjs';
 @Component({
     selector       : 'home',
     templateUrl    : './home.component.html',
+    styleUrls      :['./home.component.scss'],
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone     : true,
@@ -28,13 +29,17 @@ export class HomeComponent implements OnInit, OnDestroy
     selectedhome: string = 'ACME Corp. Backend App';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     cartOpen:boolean= false;
-    isOpen:boolean=false
+    isOpen:boolean=false;
+    nameRoute:string='';
+    // private _router:Router
     /**
      * Constructor
      */
     constructor(
         private _homeService: HomeService,
         private _router: Router,
+        private _activatedRoute: ActivatedRoute,
+
     )
     {
     }
@@ -59,6 +64,29 @@ export class HomeComponent implements OnInit, OnDestroy
                 // Prepare the chart data
             });
     }
+
+
+    redirectToPage(pageName: string): void {
+        switch (pageName) {
+          case 'Bath':
+            this.nameRoute = 'bath';
+            break;
+          case 'Kitchen & Dining':
+            this.nameRoute = 'kitchen-dining';
+            break;
+          // يمكنك إضافة حالات إضافية للغرف الأخرى هنا
+          default:
+            // توجيه المستخدم إلى الصفحة الافتراضية في حالة عدم وجود تطابق
+            window.location.href = '/';
+            break;
+        }
+
+        console.log('name route ' ,  this.nameRoute)
+        this._router.navigate(['./', this.nameRoute ], {
+            relativeTo: this._activatedRoute,
+        });
+      }
+
 
     /**
      * On destroy

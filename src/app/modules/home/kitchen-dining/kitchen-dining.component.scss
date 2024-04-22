@@ -1,0 +1,325 @@
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-touch-callout: none;
+    backface-visibility: hidden;
+
+}
+.owl-carousel .owl-item, .owl-carousel .owl-wrapper {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+item {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+@media (min-width: 576px) {
+    .feature-product-single {
+        width: 93%;
+    }
+}
+
+@media (min-width: 339px) {
+    .feature-product-single {
+        border-radius: 10px;
+        height: 150px;
+        margin: 5% auto;
+        width: 83%;
+        box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}
+@media (min-width: 768px) {
+    .feature-product-single .product-img {
+        margin-right: 6%;
+    }
+}
+
+@media (min-width: 576px) {
+    .feature-product-single .product-img {
+        margin-right: 4%;
+    }
+}
+
+@media (min-width: 339px) {
+    .feature-product-single .product-img {
+        margin-right: 6%;
+    }
+}
+
+.owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@media (min-width: 992px) {
+    .product-img .img-container {
+        height: 270px;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-img .img-container {
+        height: 270px;
+    }
+}
+
+@media (min-width: 339px) {
+    .product-img .img-container {
+        height: 300px;
+        position: relative;
+    }
+}
+.sizes-sec {
+    cursor: auto;
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    background: #e7e7e7e0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (min-width: 992px) {
+    #feature_product_wishlist {
+        top: -3%;
+        right: -9%;
+    }
+}
+
+@media (min-width: 768px) {
+    #feature_product_wishlist {
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        background: #ffffff;
+        display: flex;
+        border: 1px solid #d2d2d2;
+        border-radius: 50%;
+        top: 10%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        right: 5%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 339px) {
+    #feature_product_wishlist {
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        background: #ffffff;
+        display: flex;
+        border: 1px solid #d2d2d2;
+        border-radius: 50%;
+        top: -5%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        right: -8%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (min-width: 576px) {
+    #feature_product_wishlist img {
+        height: 12px;
+    }
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .feature-product-single .img-container img {
+        object-fit: fill;
+        width: 100%;
+        height: 130px;
+    }
+}
+@media (min-width: 339px) {
+    .feature_wishlist_img {
+        width: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .owl-carousel .owl-item .featured_deals_img {
+        height: 135px !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .owl-carousel .owl-item .featured_deals_img {
+        width: 100px !important;
+    }
+}
+@media (min-width: 339px) {
+    .owl-carousel .owl-item .featured_deals_img {
+        width: 100px !important;
+    }
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .feature-product-single .img-container img {
+        object-fit: fill;
+        width: 100%;
+        height: 130px;
+    }
+}
+@media (min-width: 339px) {
+    .featured_deals_img {
+        height: 130px;
+        width: 90%;
+        border: 1.3px solid #d2d2d2;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 339px) {
+    .feature-product-single .single-product-details {
+        margin-right: 6%;
+        height: auto;
+        width: auto;
+    }
+}
+@media (min-width: 339px) {
+    .single-product-details {
+        height: 110px;
+    }
+}
+
+
+@media (min-width: 576px), (min-width: 339px) {
+    .text-sm-right {
+        text-align: right !important;
+    }
+}
+
+
+.text-body {
+    color: #4b566b !important;
+}
+
+
+
+@media (min-width: 576px), (min-width: 339px) {
+    .text-sm-right {
+        text-align: right !important;
+    }
+}
+
+
+@media (min-width: 339px) {
+    .product-price {
+        flex-direction: column;
+    }
+}
+@media (min-width: 576px), (min-width: 339px) {
+    .text-sm-right {
+        text-align: right !important;
+    }
+}
+
+.text-accent {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+@media (min-width: 339px), (min-width: 576px) {
+    .p-sm-2 {
+        padding: .5rem !important;
+    }
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+@media (min-width: 768px), (min-width: 576px) {
+    .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+.feature-product-title {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: 700;
+}
+.carousel-wrap {
+    position: relative;
+}
+
+.no-js .owl-carousel, .owl-carousel.owl-loaded {
+    display: block;
+}
+
+.owl-carousel {
+    display: none;
+    width: 100%;
+    z-index: 1;
+}
+.owl-carousel, .owl-carousel .owl-item {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);}
+
+
+.owl-carousel .owl-stage {
+    margin: auto;
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden; // Standard property for compatibility
+}
