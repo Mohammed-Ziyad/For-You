@@ -8,7 +8,7 @@
                 <!-- <div class="flex-auto p-6 sm:p-8 sm:pt-4 overflow-y-auto"> -->
                 <div class="flex flex-auto items-center min-w-0 overflow-y-hidden">
                     <ng-container *ngFor="let member of data.teamMembers">
-                        <div class="block w-22 h-2w-22 rounded-full mx-4 row">
+                        <div class="flex-0 w-22 h-2w-22 rounded-full mx-4 row">
                           <div class="overflow-hidden">
                             <a href="javascript:void(0);" (click)="redirectToPage(member.name)">
                               <img class="w-full h-full object-cover overflow-hidden rounded-full" [src]="member.avatar">
@@ -19,6 +19,8 @@
                           </div>
                         </div>
                       </ng-container>
+
+
                 </div>
             </div>
             <!-- home selector -->
@@ -1098,6 +1100,8 @@
                                                 </div>
 
                                             </div>
+
+
 
                                         </div>
                                     </div>
