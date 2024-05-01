@@ -98,23 +98,7 @@
                 </mat-form-field>
 
                 <!-- ToS and PP -->
-                <div class="inline-flex items-end w-full mt-1.5">
-                    <mat-checkbox
-                        class="-ml-2"
-                        [color]="'primary'"
-                        [formControlName]="'agreements'">
-                        <span>I agree with</span>
-                        <a
-                            class="ml-1 text-primary-500 hover:underline"
-                            [routerLink]="['./']">Terms
-                        </a>
-                        <span>and</span>
-                        <a
-                            class="ml-1 text-primary-500 hover:underline"
-                            [routerLink]="['./']">Privacy Policy
-                        </a>
-                    </mat-checkbox>
-                </div>
+
 
                 <!-- Submit button -->
                 <button
@@ -124,7 +108,7 @@
                     [disabled]="signUpForm.disabled"
                     (click)="signUp()">
                     <span *ngIf="!signUpForm.disabled">
-                        Create your free account
+                        Create account
                     </span>
                     <mat-progress-spinner
                         *ngIf="signUpForm.disabled"

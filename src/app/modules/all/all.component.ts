@@ -52,7 +52,7 @@ import { Subject, takeUntil } from 'rxjs';
         margin: 0;
         padding: 0;
         position: absolute;
-        bottom: 2%;
+        // bottom: 2%;
         left: 0;
         right: 0;
         text-align: center;
@@ -64,7 +64,80 @@ import { Subject, takeUntil } from 'rxjs';
     #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
         color: #000;
         /*Set to match the Tailwind colour you want the active one to be */
-    }`],
+    }
+    // @import '@/scss/variables.scss';
+
+.home {
+  text-align: center;
+  min-height: 86vh;
+  padding-bottom: 0px;
+
+  &__img {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.homeJoin {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  display: grid;
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeJoin__title {
+  color:  hsl(220, 13%, 13%);
+  padding-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.homeJoin__para {
+  color: hsl(219, 9%, 45%);
+  font-size: 1.1em;
+  padding-bottom: 20px;
+}
+.homeJoin__btn {
+  background:  hsl(220, 13%, 13%);
+  font-weight: bolder;
+  border: none;
+  color: white;
+  padding: 12px 40px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  column-gap: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .home {
+    min-height: auto;
+
+    &__img {
+      width: 100%;
+      padding-top: 40px;
+    }
+  }
+
+  .homeJoin__title {
+    font-size: 1.1em;
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  .homeJoin__para {
+    color: hsl(219, 9%, 45%);
+    font-size: 1em;
+  }
+}
+
+    `],
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone     : true,

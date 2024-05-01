@@ -10,9 +10,8 @@
             </span>
         </span>
     </ng-container>
-    <mat-icon [svgIcon]="'heroicons_outline:bell'"></mat-icon>
+    <mat-icon [svgIcon]="'heroicons_outline:shopping-cart'"></mat-icon>
 </button>
-
 <!-- Notifications panel -->
 <ng-template #notificationsPanel>
 
@@ -42,7 +41,6 @@
                 </button>
             </div>
         </div>
-
         <!-- Content -->
         <div class="relative flex flex-col flex-auto sm:max-h-120 divide-y overflow-y-auto bg-card">
             <!-- Notifications -->
@@ -77,7 +75,6 @@
                             <ng-container *ngTemplateOutlet="notificationContent"></ng-container>
                         </div>
                     </ng-container>
-
                     <!-- Actions -->
                     <div class="relative flex flex-col my-5 mr-6 ml-2">
                         <!-- Indicator -->
@@ -102,9 +99,7 @@
                                 [svgIcon]="'heroicons_solid:x-mark'"></mat-icon>
                         </button>
                     </div>
-
                 </div>
-
                 <!-- Notification content template -->
                 <ng-template #notificationContent>
                     <!-- Icon -->
